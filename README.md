@@ -1,9 +1,11 @@
-GlassSettings by Victor Kaiser-Pendergrast
+GlassSettings
 =========
 ## About ##
 GlassSettings is an easy to use library for the Google Glass GDK that let's you build a simple preference Activity.
 
 There are ready-made preferences for toggles and for multiple-choice items, but you can easily add your own by simply extending the `AbstractPreference` class.
+
+Written by Victor Kaiser-Pendergrast
 
 ## How To Use ##
 
@@ -40,20 +42,20 @@ This library is still in a very early stage, so expect to see frequent updates w
 ## Screenshots ##
 Toggle Preference Unchecked:
 
-![Unchecked Toggle](https://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen1.jpg)
+![Unchecked Toggle](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen1.jpg)
 
 Toggle Preference Checked:
 
-![Checked Toggle](https://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen2.jpg)
+![Checked Toggle](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen2.jpg)
 
 Choice Preference:
 
-![Choice Preference](https://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen3.jpg)
+![Choice Preference](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen3.jpg)
 
 Choice Preference Tapped:
 
-![Tapped Choice Preference](https://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen4.jpg)
+![Tapped Choice Preference](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen4.jpg)
 
 Choice Preference After Selection:
 
-![Unchecked](https://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen5.jpg)
+![Unchecked](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen5.jpg)
