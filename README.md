@@ -12,7 +12,7 @@ Written by Victor Kaiser-Pendergrast
 You can see a demo application [here](https://github.com/victorkp/GlassSettings/tree/master/Demo). All of the interesting code takes place in [MainActivity](https://github.com/victorkp/GlassSettings/blob/master/Demo/src/com/example/glasssettingsdemo/MainActivity.java)
 
 Steps to use
-  1. Create an Activity
+  1. Create an Activity that extends `GlassPreferenceActivity`
   2. In `OnCreate`, add as many preferences as you want with `addToggle`, `addChoice`, or use `addPreference` with your own custom preference (that extends `AbstractPreference`).
   3. Call `buildAndShowOptions()` at the end of `onCreate` to show all your preferences
 
