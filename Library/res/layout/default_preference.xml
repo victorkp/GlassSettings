@@ -13,9 +13,10 @@
     
     <TextView 
         android:id="@+id/card_text"
-        android:layout_width="360px"
+        android:layout_width="0px"
         android:layout_height="280px"
+        android:layout_weight="1"
         android:gravity="center_vertical"
-        android:textSize="80px"/>
+        android:textSize="70px"/>
 
 </LinearLayout>

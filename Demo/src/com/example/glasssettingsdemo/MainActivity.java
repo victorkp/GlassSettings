@@ -1,10 +1,13 @@
+/**
+ * @author Victor Kaiser-Pendergrast
+ */
+
 package com.example.glasssettingsdemo;
 
-import com.victor.kaiser.pendergrast.settings.GlassPreferenceActivity;
-
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+
+import com.victor.kaiser.pendergrast.settings.GlassPreferenceActivity;
+import com.victor.kaiser.pendergrast.settings.option.OptionsBuilder;
 
 public class MainActivity extends GlassPreferenceActivity {
 
@@ -12,11 +15,26 @@ public class MainActivity extends GlassPreferenceActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		addTogglePreference("toggle1", "Toggle 1", true);
-		addTogglePreference("toggle2", "Toggle 2", true);
-		addTogglePreference("toggle3", "Toggle 3", true);
+		// Add a toggle preference
+		// The SharedPreference's key is "toggle1"
+		// The title is shown as "Toggle 1"
+		addTogglePreference("toggle1", "Toggle 1");
 		
-		finishOnCreate();
+		
+		// Add a Preference with multiple choices
+		OptionsBuilder syncOptions = new OptionsBuilder();
+		syncOptions.addOption("Every hour")
+					.addOption("Every two hours")
+					.addOption("Once per day")
+					.addOption("Never");
+		addChoicePreference("choice", "Sync news", syncOptions.build());
+		
+		// Add a toggle preference that defaults to true
+		addTogglePreference("toggle2", "Toggle 2", true);
+		
+		
+		// Builds all the preferences and shows them in a CardScrollView
+		buildAndShowOptions();
 	}
 
 

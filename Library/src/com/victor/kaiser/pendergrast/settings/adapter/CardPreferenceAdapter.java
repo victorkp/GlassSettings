@@ -1,3 +1,8 @@
+/**
+ * @author Victor Kaiser-Pendergrast
+ */
+
+
 package com.victor.kaiser.pendergrast.settings.adapter;
 
 import java.util.ArrayList;
