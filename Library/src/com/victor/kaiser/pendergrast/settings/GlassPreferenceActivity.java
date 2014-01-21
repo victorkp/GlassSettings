@@ -25,6 +25,7 @@ import com.victor.kaiser.pendergrast.settings.option.PreferenceOption;
 import com.victor.kaiser.pendergrast.settings.types.AbstractPreference;
 import com.victor.kaiser.pendergrast.settings.types.ChooserPreference;
 import com.victor.kaiser.pendergrast.settings.types.TogglePreference;
+import com.victor.kaiser.pendergrast.settings.types.ActivityPreference;
 
 public class GlassPreferenceActivity extends Activity implements OnItemClickListener {
 
@@ -122,6 +123,14 @@ public class GlassPreferenceActivity extends Activity implements OnItemClickList
 
 	protected void addChoicePreference(String key, String title, List<PreferenceOption> options, int defaultValueIndex) {
 		mAdapter.addPreference(new ChooserPreference(mPrefs, key, title, options, defaultValueIndex));
+	}
+	
+	protected void addActivityPreference(String key, String title, Class<?> activityClass){
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs,  key, title, activityClass));
+	}
+
+	protected void addActivityPreference(String key, String title, int imageResource, Class<?> activityClass){
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs,  key, title, imageResource, activityClass));
 	}
 
 	protected void addPreference(AbstractPreference preference) {

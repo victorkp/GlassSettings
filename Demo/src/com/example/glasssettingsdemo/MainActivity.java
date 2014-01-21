@@ -29,6 +29,9 @@ public class MainActivity extends GlassPreferenceActivity {
 					.addOption("Never");
 		addChoicePreference("choice", "Sync news", syncOptions.build());
 		
+		// Add a preference that launches an Activity
+		addActivityPreference("string-key", "Activity Preference", DemoPreferenceActivity.class);
+
 		// Add a toggle preference that defaults to true
 		addTogglePreference("toggle2", "Toggle 2", true);
 		

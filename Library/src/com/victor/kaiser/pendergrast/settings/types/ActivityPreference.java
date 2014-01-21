@@ -14,6 +14,7 @@ import android.view.View;
 import com.victor.kaiser.pendergrast.settings.option.PreferenceOption;
 
 public class ActivityPreference extends AbstractPreference {
+	private static final String EXTRA_PREFERENCE_KEY = "preference_key";
 
 	private Class<?> mActivityClass;
 	private Context mContext;
@@ -34,7 +35,7 @@ public class ActivityPreference extends AbstractPreference {
 	public boolean onSelect(){
 		// Launch the specified Activity
 		Intent launchIntent = new Intent(mContext, mActivityClass);
-		launchIntent.putExtra("preference_key", getKey());
+		launchIntent.putExtra(EXTRA_PREFERENCE_KEY, getKey());
 		mContext.startActivity(launchIntent);
 		return true;
 	}
