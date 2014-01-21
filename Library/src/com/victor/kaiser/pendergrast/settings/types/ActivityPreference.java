@@ -11,22 +11,20 @@ import android.content.SharedPreferences;
 import android.content.Intent;
 import android.view.View;
 
-import com.victor.kaiser.pendergrast.settings.R;
 import com.victor.kaiser.pendergrast.settings.option.PreferenceOption;
-
 
 public class ActivityPreference extends AbstractPreference {
 
-	private Class mActivityClass;
+	private Class<?> mActivityClass;
 	private Context mContext;
 
-	public ActivityPreference(Context context, SharedPreferences prefs, String key, String title, Class activity) {
+	public ActivityPreference(Context context, SharedPreferences prefs, String key, String title, Class<?>activity) {
 		super(prefs, key, title);
 		mContext = context;
 		mActivityClass = activity;
 	}
 
-	public ActivityPreference(Context context, SharedPreferences prefs, String key, String title, int imageResource, Class activity) {
+	public ActivityPreference(Context context, SharedPreferences prefs, String key, String title, int imageResource, Class<?> activity) {
 		super(prefs, key, title, imageResource);
 		mContext = context;
 		mActivityClass = activity;
