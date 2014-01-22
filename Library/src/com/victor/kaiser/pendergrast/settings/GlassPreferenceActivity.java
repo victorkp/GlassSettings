@@ -26,6 +26,7 @@ import com.victor.kaiser.pendergrast.settings.types.AbstractPreference;
 import com.victor.kaiser.pendergrast.settings.types.ChooserPreference;
 import com.victor.kaiser.pendergrast.settings.types.TogglePreference;
 import com.victor.kaiser.pendergrast.settings.types.ActivityPreference;
+import com.victor.kaiser.pendergrast.settings.types.activity.HeadTiltPreferenceActivity;
 
 public class GlassPreferenceActivity extends Activity implements OnItemClickListener {
 
@@ -126,13 +127,23 @@ public class GlassPreferenceActivity extends Activity implements OnItemClickList
 	}
 	
 	protected void addActivityPreference(String key, String title, Class<?> activityClass){
-		mAdapter.addPreference(new ActivityPreference(this, mPrefs,  key, title, activityClass));
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, activityClass));
 	}
 
 	protected void addActivityPreference(String key, String title, int imageResource, Class<?> activityClass){
-		mAdapter.addPreference(new ActivityPreference(this, mPrefs,  key, title, imageResource, activityClass));
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, imageResource, activityClass));
+	}
+	
+	protected void addHeadTiltPreference(String key, String title){
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, 
+													R.drawable.ic_angle_50, HeadTiltPreferenceActivity.class));
 	}
 
+	protected void addHeadTiltPreference(String key, String title, int imageResource){
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, 
+													imageResource, HeadTiltPreferenceActivity.class));
+	}
+	
 	protected void addPreference(AbstractPreference preference) {
 		mAdapter.addPreference(preference);
 	}
