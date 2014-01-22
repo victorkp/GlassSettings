@@ -41,6 +41,11 @@ public class ActivityPreference extends AbstractPreference {
 	}
 
 	@Override
+	public boolean playSuccessSoundOnSelect(){
+		return false;
+	}
+
+	@Override
 	public View getCard(Context context){
 		return getDefaultCard(context);
 	}

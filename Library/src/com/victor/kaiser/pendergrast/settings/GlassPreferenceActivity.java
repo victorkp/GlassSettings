@@ -88,7 +88,11 @@ public class GlassPreferenceActivity extends Activity implements OnItemClickList
 		if (preference.onSelect()) {
 			// True: the AbstractPreference handled everything
 
-			playSuccessSound();
+			if(preference.playSuccessSoundOnSelect()){
+				playSuccessSound();
+			}else{
+				playClickSound();
+			}
 
 			// Update the View for this AbstractPreference
 			// in case the View changed
@@ -110,50 +114,85 @@ public class GlassPreferenceActivity extends Activity implements OnItemClickList
 		}
 	}
 
+	/**
+	 * Add a Preference that can be on or off
+	 */
 	protected void addTogglePreference(String key, String title) {
 		mAdapter.addPreference(new TogglePreference(mPrefs, key, title));
 	}
 
+	/**
+	 * Add a Preference that can be on or off
+	 */
 	protected void addTogglePreference(String key, String title, boolean defaultValue) {
 		mAdapter.addPreference(new TogglePreference(mPrefs, key, title, defaultValue));
 	}
 
+	/**
+	 * Add a Preference that gives a list of options. The index of the chosen option is saved.
+	 */
 	protected void addChoicePreference(String key, String title, List<PreferenceOption> options) {
 		mAdapter.addPreference(new ChooserPreference(mPrefs, key, title, options));
 	}
 
+	/**
+	 * Add a Preference that gives a list of options. The index of the chosen option is saved.
+	 */
 	protected void addChoicePreference(String key, String title, List<PreferenceOption> options, int defaultValueIndex) {
 		mAdapter.addPreference(new ChooserPreference(mPrefs, key, title, options, defaultValueIndex));
 	}
-	
+
+	/**
+	 * Add a Preference that launches a specified Activity, passing in the preference key as an extra.
+	 * For ease of use, extend AbstractPreferenceActivity for the Activity to launch
+	 */
 	protected void addActivityPreference(String key, String title, Class<?> activityClass){
 		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, activityClass));
 	}
 
+	/**
+	 * Add a Preference that launches a specified Activity, passing in the preference key as an extra.
+	 * For ease of use, extend AbstractPreferenceActivity for the Activity to launch
+	 */
 	protected void addActivityPreference(String key, String title, int imageResource, Class<?> activityClass){
 		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, imageResource, activityClass));
 	}
 	
+	/**
+	 * Add a Preference that allows the user to specify head tilt. The value put into the preference is 
+	 * an acceleration in meters/second^2 along Glass's Z axis.
+	 */
 	protected void addHeadTiltPreference(String key, String title){
-		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, 
-													R.drawable.ic_angle_50, HeadTiltPreferenceActivity.class));
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, R.drawable.ic_angle_50, HeadTiltPreferenceActivity.class));
 	}
 
+	/**
+	 * Add a Preference that allows the user to specify head tilt. The value put into the preference is 
+	 * an acceleration in meters/second^2 along Glass's Z axis.
+	 */
 	protected void addHeadTiltPreference(String key, String title, int imageResource){
-		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, 
-													imageResource, HeadTiltPreferenceActivity.class));
+		mAdapter.addPreference(new ActivityPreference(this, mPrefs, key, title, imageResource, HeadTiltPreferenceActivity.class));
 	}
 	
+	/**
+	 * Add a generic Preference
+	 */
 	protected void addPreference(AbstractPreference preference) {
 		mAdapter.addPreference(preference);
 	}
 
-	private void playSuccessSound() {
+	/**
+	 * Play the standard Glass success sound
+	 */
+	protected void playSuccessSound() {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.playSoundEffect(Sounds.SUCCESS);
 	}
 
-	private void playClickSound() {
+	/**
+	 * Play the standard Glass tap sound
+	 */
+	protected void playClickSound() {
 		AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		audio.playSoundEffect(Sounds.TAP);
 	}

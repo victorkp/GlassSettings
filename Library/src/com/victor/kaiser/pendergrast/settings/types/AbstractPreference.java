@@ -71,6 +71,14 @@ public abstract class AbstractPreference {
 	public abstract View getCard(Context context);
 
 	/**
+	 * Return true to have the GlassPreferenceActivity play a success sound on tap,
+	 * false to play the tap sound
+	 */
+	public boolean playSuccessSoundOnSelect(){
+		return true;
+	}
+
+	/**
 	 * Builds a View with this Preference's title and image (if any)
 	 * @param context
 	 *            Activity/Service context

@@ -11,10 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static int ic_angle_50=0x7f020000;
-        public static int ic_done_50=0x7f020001;
-        public static int ic_launcher=0x7f020002;
-        public static int ic_no_50=0x7f020003;
+        public static int ic_angle_150=0x7f020000;
+        public static int ic_angle_50=0x7f020001;
+        public static int ic_done_50=0x7f020002;
+        public static int ic_launcher=0x7f020003;
+        public static int ic_no_50=0x7f020004;
     }
     public static final class id {
         public static int card_image=0x7f050000;

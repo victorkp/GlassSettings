@@ -44,7 +44,7 @@ In addition to those three completely packaged Preferences, there are two additi
   - `HeadTiltPreferenceActivity` extends `AbstractPreferenceActivity`, so that may be helpful to look at
  2. AbstractPreference
   - Used to create completely custom Preference functionality
-  - See below for how to use
+  - See below for how to use this
 
 ## Creating Your Own Kinds of Preferences with AbstractPreference##
 
