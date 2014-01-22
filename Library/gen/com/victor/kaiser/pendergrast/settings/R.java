@@ -11,9 +11,10 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static int ic_done_50=0x7f020000;
-        public static int ic_launcher=0x7f020001;
-        public static int ic_no_50=0x7f020002;
+        public static int ic_angle_50=0x7f020000;
+        public static int ic_done_50=0x7f020001;
+        public static int ic_launcher=0x7f020002;
+        public static int ic_no_50=0x7f020003;
     }
     public static final class id {
         public static int card_image=0x7f050000;
@@ -24,6 +25,7 @@ public final class R {
     }
     public static final class string {
         public static int app_name=0x7f040000;
+        public static int tap_to_set_angle=0x7f040002;
         public static int title_activity_glass_preference=0x7f040001;
     }
 }

@@ -3,5 +3,6 @@
 
     <string name="app_name">GlassSettingsLibrary</string>
     <string name="title_activity_glass_preference">GlassPreferenceActivity</string>
+    <string name="tap_to_set_angle">Tap to set angle</string>
 
 </resources>
