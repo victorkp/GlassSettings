@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>GlassSettings by victorkp</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>GlassSettings</h1>
+        <h2>A library to create a preference screen on Google Glass for GDK apps</h2>
+        <a href="https://github.com/victorkp/GlassSettings" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="glasssettings" class="anchor" href="#glasssettings"><span class="octicon octicon-link"></span></a>GlassSettings</h1>
+
+<p>By Victor Kaiser-Pendergrast</p>
+
+<h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>GlassSettings is an easy to use library for the Google Glass GDK that let's you build a simple preference Activity.</p>
+
+<p>There are ready-made preferences for toggles and for multiple-choice items, but you can easily add your own by simply extending the <code>AbstractPreference</code> class.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How To Use</h2>
+
+<p>You can see a demo application <a href="https://github.com/victorkp/GlassSettings/tree/master/Demo">here</a>. All of the interesting code takes place in <a href="https://github.com/victorkp/GlassSettings/blob/master/Demo/src/com/example/glasssettingsdemo/MainActivity.java">MainActivity</a></p>
+
+<p>Steps to use</p>
+
+<ol>
+<li>Create an Activity that extends <code>GlassPreferenceActivity</code>
+</li>
+<li>In <code>OnCreate</code>, add as many preferences as you want with <code>addTogglePreference</code>, <code>addChoicePreference</code>, <code>addActivityPreference</code>, <code>addHeadTiltPreference</code> or use <code>addPreference</code> with your own custom preference (that extends <code>AbstractPreference</code>).</li>
+<li>Call <code>buildAndShowOptions()</code> at the end of <code>onCreate</code> to show all your preferences</li>
+</ol><h2>
+<a name="preference-types" class="anchor" href="#preference-types"><span class="octicon octicon-link"></span></a>Preference Types</h2>
+
+<p>GlassSettings provides three Preference types that are completely ready for use with no additional setup:</p>
+
+<ol>
+<li>TogglePreference
+
+<ul>
+<li>A simple Preference that can be on or off</li>
+</ul>
+</li>
+<li>ChooserPreference
+
+<ul>
+<li>A Preference that gives the user a list to choose from</li>
+<li>Lists of options can be easily assembled with the <code>OptionsBuilder</code> class (see the Demo source)</li>
+</ul>
+</li>
+<li>
+<p>HeadTiltPreference</p>
+
+<ul>
+<li>A Preference that uses the accelerometer to let the user pick the amount of up/down tilt of Glass</li>
+<li>Note that this Preference does not store an angle, but rather acceleration in meters/second<sup>2</sup> in Glass's Z axis</li>
+<li>
+<p>In order to use this Preference, you will have to define an Activity in AndroidManifest.xml:</p>
+
+<p></p>
+</li>
+</ul>
+</li>
+</ol><p>In addition to those three completely packaged Preferences, there are two additional that let custom experiences be created</p>
+
+<ol>
+<li>ActivityPreference
+
+<ul>
+<li>Launches an Activity when tapped</li>
+<li>The Preference's key is passed in as an extra with the key <code>"preference_key"</code>, and can be retrieved with <code>getIntent().getExtras().getString("preference_key")</code>
+</li>
+<li>By extending <code>AbstractPreferenceActivity</code>, there are built in methods to get and put values into <code>SharedPreferences</code>, play click/success sounds, and get the preference key (see <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/activity/AbstractPreferenceActivity.java">here</a>)</li>
+<li>
+<code>HeadTiltPreferenceActivity</code> extends <code>AbstractPreferenceActivity</code>, so that may be helpful to look at</li>
+</ul>
+</li>
+<li>AbstractPreference
+
+<ul>
+<li>Used to create completely custom Preference functionality</li>
+<li>See below for how to use</li>
+</ul>
+</li>
+</ol><h2>
+<a name="creating-your-own-kinds-of-preferences-with-abstractpreference" class="anchor" href="#creating-your-own-kinds-of-preferences-with-abstractpreference"><span class="octicon octicon-link"></span></a>Creating Your Own Kinds of Preferences with AbstractPreference</h2>
+
+<p>There are two kinds of preference that you can make:</p>
+
+<ol>
+<li>A preference that handles everything when it is tapped (See <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/TogglePreference.java">TogglePreference</a> and <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/ActivityPreference.java">ActivityPreference</a>)</li>
+<li>A preference that shows a series of choices when it is tapped (See <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/ChooserPreference.java">ChooserPreference</a>)</li>
+</ol><ul>
+<li>Create a class that extends <code>AbstractPreference</code>
+</li>
+<li>Create constructors</li>
+<li>Override <code>getCard()</code>. This is where you will create the <code>View</code> for your preference. <code>getCard()</code> is called every time <em>GlassSettings</em> thinks that your preference's <code>View</code> might have to be updated</li>
+<li>Override <code>onSelect()</code>:
+
+<ul>
+<li>If you're building something like <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/TogglePreference.java">TogglePreference</a>, then add all your functionality here and return <code>true</code> (indicating that everything is done). You can leave <code>getOptions()</code> and <code>onOptionsItemSelected()</code> alone</li>
+<li>If you're building something more like <a href="https://github.com/victorkp/GlassSettings/blob/master/Library/src/com/victor/kaiser/pendergrast/settings/types/ChooserPreference.java">ChooserPreference</a>, in <code>onSelect()</code> return <code>false</code> and add functionality to <code>getOptions()</code> and <code>onOptionsItemSelected(int)</code>
+
+<ul>
+<li>The <code>List</code> returned by <code>getOptions()</code> will be used to populate an <code>OptionsMenu</code>
+</li>
+<li>If an item is selected in the <code>OptionsMenu</code>, then <code>onOptionsItemSelected(int)</code> will be called with the index of the selected item</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p>That's all there is to it! </p>
+
+<h2>
+<a name="contact-and-future-development" class="anchor" href="#contact-and-future-development"><span class="octicon octicon-link"></span></a>Contact and Future Development</h2>
+
+<p>If you have any questions, comments, or suggestions, feel free to reach me at <a href="mailto:v.kaiser.pendergrast@gmail.com">v.kaiser.pendergrast@gmail.com</a></p>
+
+<p>This library is still in a very early stage, so expect to see frequent updates with more kinds of preferences and additional functionality (perhaps the ability to define preference screens in XML).</p>
+
+<h2>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p>Toggle Preference Unchecked:</p>
+
+<p><img src="http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen1.png" alt="Unchecked Toggle"></p>
+
+<p>Toggle Preference Checked:</p>
+
+<p><img src="http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen2.png" alt="Checked Toggle"></p>
+
+<p>Choice Preference:</p>
+
+<p><img src="http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen3.png" alt="Choice Preference"></p>
+
+<p>Choice Preference Tapped:</p>
+
+<p><img src="http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen4.png" alt="Tapped Choice Preference"></p>
+
+<p>Choice Preference After Selection:</p>
+
+<p><img src="http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen5.png" alt="Unchecked"></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/victorkp/GlassSettings/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/victorkp/GlassSettings/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/victorkp/GlassSettings"></a> is maintained by <a href="https://github.com/victorkp">victorkp</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
