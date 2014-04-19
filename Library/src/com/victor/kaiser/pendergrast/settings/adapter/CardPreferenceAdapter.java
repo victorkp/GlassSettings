@@ -52,16 +52,6 @@ public class CardPreferenceAdapter extends CardScrollAdapter{
 	}
 	
 	@Override
-	public int findIdPosition(Object arg0) {
-		return -1;
-	}
-
-	@Override
-	public int findItemPosition(Object arg0) {
-		return mCards.indexOf(arg0);
-	}
-
-	@Override
 	public int getCount() {
 		return mCards.size();
 	}
@@ -74,5 +64,10 @@ public class CardPreferenceAdapter extends CardScrollAdapter{
 	@Override
 	public View getView(int index, View convertView, ViewGroup viewGroup) {
 		return mCards.get(index);
+	}
+
+	@Override
+	public int getPosition(Object arg0) {
+		return mCards.indexOf(arg0);
 	}
 }

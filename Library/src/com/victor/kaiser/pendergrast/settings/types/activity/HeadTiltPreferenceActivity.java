@@ -51,7 +51,7 @@ public class HeadTiltPreferenceActivity extends AbstractPreferenceActivity imple
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mGravity = mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
 		
-		setContentView(mCard.toView());
+		setContentView(mCard.getView());
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class HeadTiltPreferenceActivity extends AbstractPreferenceActivity imple
 			
 			mCard.setText(" " + angle + "\n degrees");
 			
-			setContentView(mCard.toView());
+			setContentView(mCard.getView());
 
 			mLastViewUpdate = System.currentTimeMillis();
 		}
