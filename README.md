@@ -72,20 +72,20 @@ This library is still in a very early stage, so expect to see frequent updates w
 ## Screenshots ##
 Toggle Preference Unchecked:
 
-![Unchecked Toggle](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen1.png)
+![Unchecked Toggle](/Screenshots/screen1.png)
 
 Toggle Preference Checked:
 
-![Checked Toggle](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen2.png)
+![Checked Toggle](/Screenshots/screen2.png)
 
 Choice Preference:
 
-![Choice Preference](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen3.png)
+![Choice Preference](/Screenshots/screen3.png)
 
 Choice Preference Tapped:
 
-![Tapped Choice Preference](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen4.png)
+![Tapped Choice Preference](/Screenshots/screen4.png)
 
 Choice Preference After Selection:
 
-![Unchecked](http://raw2.github.com/victorkp/GlassSettings/master/Screenshots/screen5.png)
+![Unchecked](/Screenshots/screen5.png)
