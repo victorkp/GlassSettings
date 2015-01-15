@@ -1,0 +1,2 @@
+/home/vkaiser-pendergrast/Dropbox/GitHub/GlassSettings/Gradle/glassSettingsDemo/build/intermediates/classes/debug
+/home/vkaiser-pendergrast/Dropbox/GitHub/GlassSettings/Gradle/glassSettingsDemo/build/intermediates/pre-dexed/debug/classes-fe0169c942ff81a2688c8fee11b9a113e86be827.jar

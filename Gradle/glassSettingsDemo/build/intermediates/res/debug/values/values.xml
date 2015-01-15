@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/vkaiser-pendergrast/Dropbox/GitHub/GlassSettings/Gradle/glassSettingsDemo/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">GlassSettingsDemo</string>
+    <!-- From: file:/home/vkaiser-pendergrast/Dropbox/GitHub/GlassSettings/Gradle/glassSettingsDemo/build/intermediates/exploded-aar/Gradle/glassSettingsLibrary/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="tap_to_set_angle">Tap to set angle</string>
+    <string name="title_activity_glass_preference">GlassPreferenceActivity</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="40px" >
+
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="200px"
+        android:layout_height="280px"
+        android:scaleType="centerInside" />
+    
+    <TextView 
+        android:id="@+id/card_text"
+        android:layout_width="0px"
+        android:layout_height="280px"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textSize="70px"/>
+
+</LinearLayout><!-- From: file:/home/vkaiser-pendergrast/Dropbox/GitHub/GlassSettings/Gradle/glassSettingsLibrary/src/main/res/layout/default_preference.xml -->

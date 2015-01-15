@@ -1,0 +1,85 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:5:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:4:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+uses-sdk
+ADDED from AndroidManifest.xml:7:5
+MERGED from Gradle:glassSettingsLibrary:unspecified:5:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:9:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:8:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#com.google.android.glass.permission.DEVELOPMENT
+ADDED from AndroidManifest.xml:11:5
+	android:name
+		ADDED from AndroidManifest.xml:11:22
+application
+ADDED from AndroidManifest.xml:13:5
+MERGED from Gradle:glassSettingsLibrary:unspecified:9:5
+	android:label
+		ADDED from AndroidManifest.xml:16:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:14:9
+	android:icon
+		ADDED from AndroidManifest.xml:15:9
+activity#com.example.glasssettingsdemo.MainActivity
+ADDED from AndroidManifest.xml:17:9
+	android:label
+		ADDED from AndroidManifest.xml:19:13
+	android:name
+		ADDED from AndroidManifest.xml:18:13
+intent-filter#com.google.android.glass.action.VOICE_TRIGGER
+ADDED from AndroidManifest.xml:20:13
+action#com.google.android.glass.action.VOICE_TRIGGER
+ADDED from AndroidManifest.xml:21:17
+	android:name
+		ADDED from AndroidManifest.xml:21:25
+meta-data#com.google.android.glass.VoiceTrigger
+ADDED from AndroidManifest.xml:24:13
+	android:resource
+		ADDED from AndroidManifest.xml:26:17
+	android:name
+		ADDED from AndroidManifest.xml:25:17
+activity#com.example.glasssettingsdemo.DemoPreferenceActivity
+ADDED from AndroidManifest.xml:28:9
+	android:label
+		ADDED from AndroidManifest.xml:30:13
+	android:name
+		ADDED from AndroidManifest.xml:29:13
+activity#com.victor.kaiser.pendergrast.settings.GlassPreferenceActivity
+ADDED from AndroidManifest.xml:33:9
+MERGED from Gradle:glassSettingsLibrary:unspecified:10:9
+	android:enabled
+		ADDED from AndroidManifest.xml:34:13
+	android:label
+		ADDED from AndroidManifest.xml:37:13
+	android:exported
+		ADDED from AndroidManifest.xml:35:13
+	android:name
+		ADDED from AndroidManifest.xml:36:13
+activity#com.victor.kaiser.pendergrast.settings.types.activity.HeadTiltPreferenceActivity
+ADDED from AndroidManifest.xml:40:9
+MERGED from Gradle:glassSettingsLibrary:unspecified:16:9
+	android:enabled
+		ADDED from AndroidManifest.xml:41:13
+	android:label
+		ADDED from AndroidManifest.xml:44:13
+	android:exported
+		ADDED from AndroidManifest.xml:42:13
+	android:name
+		ADDED from AndroidManifest.xml:43:13

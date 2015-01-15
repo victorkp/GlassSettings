@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.victor.kaiser.pendergrast.settings" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <application android:allowBackup="true" >
+        <activity
+            android:name="com.victor.kaiser.pendergrast.settings.GlassPreferenceActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/title_activity_glass_preference" >
+        </activity>
+        <activity
+            android:name="com.victor.kaiser.pendergrast.settings.types.activity.HeadTiltPreferenceActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/title_activity_glass_preference" >
+        </activity>
+    </application>
+
+</manifest>
